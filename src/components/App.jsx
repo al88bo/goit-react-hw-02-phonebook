@@ -18,7 +18,7 @@ class App extends Component {
 
   addContact = formData => {
     const hasDuplicate = this.state.contacts.some(
-      profile => profile.name === formData.name
+      profile => profile.name.toLowerCase() === formData.name.toLowerCase()
     );
     if (hasDuplicate) return alert(`${formData.name} is already in contacts.`);
     formData.id = nanoid();
